@@ -5921,3 +5921,33 @@ section,
   padding-bottom: 60px;
   /* Add your styles here */
 }
+
+      /* Brand cards – force square image frame */
+      .doctor-card .doctor-image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;          /* make it a square */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;          /* light background behind logos */
+        border-radius: 12px;          /* optional: match your card style */
+      }
+
+      /* Make any logo/photo fit nicely inside the square */
+      .doctor-card .doctor-image img {
+        max-width: 80%;
+        max-height: 80%;
+        width: auto;
+        height: auto;
+        object-fit: contain;          /* no cropping, keep full logo visible */
+      }
+
+      /* Keep the badge on top-right corner */
+      .doctor-card .doctor-image .availability-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 2;
+      }
