@@ -5922,32 +5922,34 @@ section,
   /* Add your styles here */
 }
 
-      /* Brand cards – force square image frame */
-      .doctor-card .doctor-image {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1 / 1;          /* make it a square */
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f8f9fa;          /* light background behind logos */
-        border-radius: 12px;          /* optional: match your card style */
-      }
 
-      /* Make any logo/photo fit nicely inside the square */
-      .doctor-card .doctor-image img {
-        max-width: 80%;
-        max-height: 80%;
-        width: auto;
-        height: auto;
-        object-fit: contain;          /* no cropping, keep full logo visible */
-      }
+/* === Brand cards: force square frame and contain logos === */
+.doctor-card .doctor-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;            /* perfect square */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 16px;            /* match your card rounding */
+}
 
-      /* Keep the badge on top-right corner */
-      .doctor-card .doctor-image .availability-badge {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        z-index: 2;
-      }
+/* Make any logo fit nicely inside the square (no cropping) */
+.doctor-card .doctor-image img {
+  position: relative;
+  max-width: 85%;
+  max-height: 85%;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important; /* override any 'cover' from template */
+}
+
+/* Keep the badge in the top-right corner */
+.doctor-card .doctor-image .availability-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
