@@ -17,6 +17,7 @@
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Lato", sans-serif;
+  --brand-logo-image: url("../img/rohee-medic-logo.png");
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -174,22 +175,26 @@ h6 {
 
 .header .logo {
   line-height: 1;
+  gap: 10px;
 }
 
-.header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
+.header .logo::before {
+  content: "";
+  width: 76px;
+  height: 52px;
+  flex: 0 0 auto;
+  background: center / contain no-repeat var(--brand-logo-image);
 }
 
+.header .logo img,
 .header .logo svg {
-  height: 32px;
-  padding-right: 5px;
-  color: var(--accent-color);
+  display: none;
 }
 
 @media (max-width: 575px) {
-  .header .logo svg {
-    height: 28px;
+  .header .logo::before {
+    width: 64px;
+    height: 44px;
   }
 }
 
@@ -529,11 +534,19 @@ h6 {
 .footer .footer-about .logo {
   line-height: 1;
   margin-bottom: 25px;
+  gap: 10px;
+}
+
+.footer .footer-about .logo::before {
+  content: "";
+  width: 86px;
+  height: 58px;
+  flex: 0 0 auto;
+  background: center / contain no-repeat var(--brand-logo-image);
 }
 
 .footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+  display: none;
 }
 
 .footer .footer-about .logo span {
@@ -542,6 +555,13 @@ h6 {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+@media (max-width: 575px) {
+  .footer .footer-about .logo::before {
+    width: 74px;
+    height: 50px;
+  }
 }
 
 .footer .footer-about p {
