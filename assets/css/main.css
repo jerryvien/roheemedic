@@ -698,6 +698,51 @@ h6 {
   bottom: 15px;
 }
 
+.whatsapp-widget {
+  position: fixed;
+  right: 15px;
+  bottom: 72px;
+  z-index: 99998;
+  display: inline-flex;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-widget i {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.whatsapp-widget span {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.whatsapp-widget:hover {
+  color: #ffffff;
+  background: #1fb85a;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(31, 184, 90, 0.32);
+}
+
+@media (max-width: 576px) {
+  .whatsapp-widget {
+    padding: 13px;
+    border-radius: 50%;
+  }
+
+  .whatsapp-widget span {
+    display: none;
+  }
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
